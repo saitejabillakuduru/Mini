@@ -9,7 +9,7 @@ import entity.Student;
 @Repository
 public interface StudentRepository extends JpaRepository<Student, Integer> {
 	
-	@Query(value =  "select id from student order by id desc",nativeQuery = true)
+	@Query(value =  "SELECT MAX(id) FROM student",nativeQuery = true)
 	Integer findlatestId();
 
 }
